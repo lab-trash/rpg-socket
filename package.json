@@ -1,0 +1,8 @@
+{
+  "name": "rpg-socket",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:BlacksmithProject/rpg-socket.git",
+  "author": "Nicolas Gomes de Oliveira <ngdo27@gmail.com>",
+  "license": "MIT"
+}
