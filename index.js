@@ -25,7 +25,7 @@ let playerSockets = {};
 
 io.on('connection', (socket) => {
   const gameId = socket.handshake.query.gameId;
-  socket.on('message', function(message) {
+  socket.on('message', function(player) {
     // On first player
     if (!playerSockets.hasOwnProperty(socket.id)) {
       playerSockets[socket.id] = [];
@@ -35,8 +35,8 @@ io.on('connection', (socket) => {
     }
 
     // Add player to playerSockets and games
-    playerSockets[socket.id][gameId] = message.player;
-    games[gameId].add(message.player);
+    playerSockets[socket.id][gameId] = player;
+    games[gameId].add(player);
 
     // Send message to Mercure
     sendMessage(gameId, Array.from(games[gameId]));
