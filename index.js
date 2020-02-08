@@ -14,6 +14,10 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.get('/jmt4', function (req, res) {
+  res.sendFile(__dirname + '/socket.io.js');
+});
+
 const io = require('socket.io')(server, {
   serveClient: false,
   pingInterval: 10000,
